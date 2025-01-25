@@ -22,7 +22,6 @@ jobs:
         python-version: 3.12.8
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip numpy==1.16.1 cython git+https://github.com/UTA-REST/ArXe_plus_anything 
         python -m pip install --upgrade setuptools git+https://github.com/UTA-REST/PyGasMix --user
         python -m pip install --upgrade  git+https://github.com/UTA-REST/PyBoltz_Test_Data --user
 
