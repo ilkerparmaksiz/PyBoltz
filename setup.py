@@ -34,7 +34,10 @@ def makeExtensions(path):
                     #moduleFiles.append(root+'/'+(file.split('.')[0]+'.pxd'))
                 pathWithFile = root+'/'+file.split('.')[0]
                 moduleName = pathWithFile.replace('/','.')
-                extensions.append(Extension(moduleName,moduleFiles,include_dirs=[numpy.get_include(),'./PyBoltz/','./PyBoltz/C/']))
+                extensions.append(Extension(moduleName,moduleFiles,
+                include_dirs=[numpy.get_include(),os.getcwd()+'/PyBoltz/',os.getcwd()+'/PyBoltz/C/',os.getcwd()+'/PyBoltz/MonteFuncs/',
+                os.getcwd()+'/PyBoltz/Townsend/',os.getcwd()+'/PyBoltz/Townsend/CollisionFrequencyCalc/',os.getcwd()+'/PyBoltz/Townsend/Friedland/',os.getcwd()+'/PyBoltz/Townsend/Monte/',os.getcwd()+'/PyBoltz/Townsend/PulsedTownsend/',os.getcwd()+'/PyBoltz/Townsend/SteadyStateTownsend/',os.getcwd()+'/PyBoltz/Townsend/TimeOfFlight/']))
+                
     return extensions
 extensions = makeExtensions('PyBoltz')
 '''[
@@ -80,3 +83,4 @@ setup(
     cmdclass={'build_ext': build_ext},
 )
 
+B
